@@ -10,17 +10,17 @@ class AbstractFriend{
 class Friend:AbstractFriend{
 
     //private by default in c++
-    string Name;
+    
     int Age;
     string BirthMonth;
-
+protected:
+string Name;
 public:
-    //This is a setter method
-    void setName(string name){
+   
+    void setName(string name){  //This is a setter method
         Name = name;
-    }
-    //This is a getter method
-    string getName(){
+    }   
+    string getName(){ //This is a getter method
         return Name;
     }
 
@@ -72,6 +72,28 @@ public:
         }
     }
 };
+
+class MaleFriend:public Friend{
+public:
+    char Gender;
+
+    //Constructor
+    MaleFriend(string name, int age, string birthMonth, char gender)
+    :Friend(name, age, birthMonth)
+    {
+        Gender = gender;
+    }
+
+    void CharacterInfo(){
+        cout<<"Name: "<<Name<<endl;
+        cout<<"Age: "<<getAge()<<endl;
+        cout<<"Birth Month: "<<getmonth()<<endl;
+        cout<<"Gender: "<<Gender<<endl;
+    }
+};
+
+//HW created another inheritance class 
+
 int main(){
     Friend Friend1("Shao",19,"December");
     Friend Friend2("Tracy", 16, "Feburary");
@@ -84,5 +106,11 @@ int main(){
     //Abustraction
     Friend1.Adult();
     Friend2.Adult();
-    
+    cout<<endl;
+
+    //Inheritance
+    MaleFriend Friend3 = MaleFriend("Hao", 16, "March", 'M');
+    Friend3.CharacterInfo();
+
+    Friend3.Adult();
 }
