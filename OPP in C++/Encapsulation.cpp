@@ -1,10 +1,7 @@
 #include <iostream> 
 using namespace std;
 /* 
-⚪ Created class
-⚪ Access Modifiers
-⚪ Behaviors
-⚪ Constructors
+⚪ Encapsulation
 */
 
 class Friend{
