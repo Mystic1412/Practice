@@ -32,4 +32,4 @@ int main(){
 
     Friend Friend2("Tracy", 16, "Feburary");
     Friend2.Intro();
-    
+}
